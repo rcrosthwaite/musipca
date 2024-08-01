@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons>
+        <ion-button (click) ='goToLogin()'><ion-icon  name="chevron-back-circle-outline" size="large"></ion-icon></ion-button>
+        <ion-title class="ion-text-center ion-text-capitalize"> <ion-icon name="radio-outline"></ion-icon> MUSIC PCA</ion-title>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<h2>Artistas</h2>
+<ion-content class="custome-bg-color">
+  <swiper-container class="sc_artistas" slides-per-view="4" speed="500">
+    <swiper-slide *ngFor="let artista of artistas">
+      <ion-avatar (click)="showSongs(artista)">
+        <img src="{{artista.image}}">
+        <span>{{artista.name}}</span>
+      </ion-avatar>
+    </swiper-slide>
+  </swiper-container>
+
+  <h2>Nuevos lanzamientos</h2>
+  <swiper-container  class="ion-text-center">
+    <swiper-slide *ngFor="let slide of slides">
+      <h2>{{slide.title}}</h2>
+      <img src="{{slide.image}}">
+      <p>Album: {{slide.album}}</p>
+      <p>Genero: {{slide.genero}}</p>
+    </swiper-slide>  
+  </swiper-container>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-star">{{parseTime(currentSong.currentTime)||"0:00"}}</ion-col>
+      <ion-col class="ion-text-end">{{parseTime(currentSong.duration) || "0:00"}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-progress-bar [value]="newTime || 0"></ion-progress-bar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-icon name="heart"></ion-icon>
+       </ion-col>
+       <ion-col>
+        <ion-text>{{song.name || "Sin canción reprodiciondose"}}</ion-text>
+       </ion-col>
+       <ion-col class="ion-text-end">
+        <ion-icon (click)="play()" *ngIf="!song.playing" name="play"></ion-icon>
+        <ion-icon (click)="pause()" *ngIf="song.playing" name="pause-outline"></ion-icon>
+       </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

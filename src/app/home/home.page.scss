@@ -1,0 +1,42 @@
+swiper-container {
+    background-color: hwb(0 0% 55%);
+  }
+  
+  h2{
+    padding: 1%;
+    
+    color: rgba(255, 255, 255, 0.574);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  ion-toolbar{
+    color: rgb(255, 255, 255);
+    --background: #ff0000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+
+  .custome-bg-color{
+    --background: rgb(0, 0, 0); //CSS Custom Properties
+  }
+  
+  p{
+    font-size:medium;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  a {
+    color: hsl(237, 100%, 50%);
+    font-family: sans-serif;
+  }
+
+  .sc_artistas {
+    font-size: small;
+    height: 12%;
+    background-color: rgba(103, 103, 103, 0.781); 
+    //opacity: 0.1;
+  }
+
+  img{
+    opacity: 1;
+  }

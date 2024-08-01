@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-title class="ion-text-center ion-text-capitalize"> <ion-icon name="radio-outline"></ion-icon> MUSIC PCA</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="custome-bg-color" [fullscreen]="true">
+  <form class="custome-form" [formGroup]="loginForm" (ngSubmit)="(loginUser(loginForm.value))">
+    <h2 class="ion-text-center ion-text-capitalize">iniciar sesion</h2>
+    <ion-item>
+      <ion-icon name="person-circle-outline"></ion-icon>
+      <ion-input label="Email" [clearInput]="true" labelPlacement="fixed" placeholder="Escribir correo electrónico" formControlName="email"></ion-input>
+      <div> 
+        <ng-container  *ngFor="let validation of validation_message.email">
+          <div *ngIf = "(loginForm.get('email')?.hasError(validation.type) && 
+          loginForm.get('email')?.dirty)">
+          {{validation.message}}
+        </div>
+        </ng-container>
+      </div>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <ion-input label="Password" labelPlacement="fixed" placeholder="Escribir contraseña" type="password" value="password" formControlName="pass"></ion-input>
+      <div>
+        <ng-container *ngFor="let validation of validation_message.pass">
+          <div *ngIf = "(loginForm.get('pass')?.hasError(validation.type) && 
+          loginForm.get('pass')?.dirty)">
+          {{validation.message}}
+        </div>
+        </ng-container>
+      </div>
+    </ion-item>
+  
+
+
+<ion-button class="costume-button"
+[disabled] = '!loginForm.valid'
+type="submit"
+>
+  Iniciar sesión
+</ion-button>
+
+<ion-button class="costume-button" (click) = 'goToRegister()'>
+  Registrarme
+</ion-button>
+
+</form>
+
+</ion-content>

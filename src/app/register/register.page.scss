@@ -1,0 +1,22 @@
+ion-toolbar{
+    color: #ff0000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .custome-bg-color{
+    //--background: red; //CSS Custom Properties
+    --background: linear-gradient(rgba(0, 0, 0, 0.758),rgba(0, 0, 0, 0.758)), url(https://e1.pxfuel.com/desktop-wallpaper/180/922/desktop-wallpaper-album-covers-rap.jpg) 0 0/100% 100% no-repeat;
+  }
+
+
+  .costume-button {
+    --background: #ff0000;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .custome-form{
+    padding: 5%;
+    width: 100%;
+    
+  }

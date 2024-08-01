@@ -1,0 +1,29 @@
+swiper-container {
+    width: 80%;
+    height: 80%;
+  
+  }
+  
+  swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .cool-title{
+    color: red;
+  }
+  
+  .custome-bg-color{
+    --background: aqua; //CSS Custom Properties
+  }
+  
+  .sp-bg-color{
+    background-color: magenta;
+  }
+  
+  ion-avatar {
+    --border-radius: 100px; //CSS Custom Properties
+  }
